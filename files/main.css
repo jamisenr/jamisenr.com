@@ -243,3 +243,32 @@ blockquote {
   color: #fff;
   border-bottom: 1px solid var(--accent);
 }
+.contact-preview {
+  margin: 2rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.contact-preview .proto {
+  color: var(--highlight);
+  font-weight: 500;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid #444;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.contact-button:hover {
+  color: #fff;
+  background-color: #111;
+  border-color: #666;
+}
