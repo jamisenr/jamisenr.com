@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="How I scraped nearly 2,000 Bellingham School District staff emails using Python and web scraping techniques.">
+  <meta name="author" content="Jamisen Renoud">
+  <meta name="keywords" content="email scraping, Python, BeautifulSoup, web scraping, Bellingham Public Schools, automation">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scraping Bellingham School District Staff Emails</title>
+  <link rel="stylesheet" href="../files/main.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html">Home</a>
+  </nav>
+  <main class="container">
+    <h2>How I Scraped Nearly 2,000 Bellingham School District Staff Emails</h2>
+    <p><small>Jamisen Renoud</small></p>
+    <p><small>May 11th, 2025</small></p>
+    
+    <blockquote>
+      <strong>Note:</strong>This is a completely public endpoint. No login or security was bypassed.
+    </blockquote>
+    <p>
+        I was snooping around the <a href="https://bellinghamschools.org/" target="_blank" rel="noopener noreferrer">Bellingham Public School's Website</a> and went to the <a href="https://bellinghamschools.org/contact/" target="_blank" rel="noopener noreferrer">contact page</a>.
+    </p>
+    <p>
+        When I looked in the network tab on dev tools, I saw every time you scrolled for more results on the page, It would send a request to <code>https://bellinghamschools.org/wp-content/themes/schoolsites/directoryHandler.php?numPosts=9&pageNumber=1</code>, and every time increased the page number by 1.
+    </p>
+    <img src="../files/blog-content/scraping-bellingham-staff-emails/1.png" alt="Image">
+    <p>
+        This got me thinking, upon going to <code>https://bellinghamschools.org/wp-content/themes/schoolsites/directoryHandler.php?numPosts=9&pageNumber=1</code>, you are greeted by a no css page, that just has photos and info, and it has the persons photo, name, phone number, and other stuff. 
+    </p>
+    <p>
+        At the end of all that is a mailto herf with their email. So I created a simple Python script, the first issue was that I was manually taking every page 1 by 1 up to 193 pages (I would get rate limited in like a sec) so I just used <code>?numPosts=9999999999&pageNumber=1</code> and got everything at once.
+    </p>
+    <p>I ended up with this code</p>
+    <pre class="codeblock"><code>
+import requests
+from bs4 import BeautifulSoup
+
+URL = "https://bellinghamschools.org/wp-content/themes/schoolsites/directoryHandler.php?numPosts=9999999999&pageNumber=1"
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/117.0"
+}
+
+try:
+    r = requests.get(URL, headers=HEADERS, timeout=15)
+    r.raise_for_status()
+
+    soup = BeautifulSoup(r.text, "html.parser")
+    emails = {
+        a["href"].replace("mailto:", "").strip()
+        for a in soup.find_all("a", href=True)
+        if a["href"].startswith("mailto:")
+    }
+
+    with open("emails.txt", "w") as f:
+        for email in sorted(emails):
+            f.write(email + "\n")
+
+    print(f"[Yippe] Done. {len(emails)} emails saved to emails.txt.")
+except Exception as e:
+    print(f"[!] Failed: {e}")
+    </code></pre>
+    <p>
+        It just sends 1 request, and gets all the emails!!
+        It makes a file with 1 email per line, when I ran it today I got 1732 emails!
+        <br><code>[Yippe] Done. 1732 emails saved to emails.txt.</code>
+    </p>
+  </main>
+</body>
+</html>

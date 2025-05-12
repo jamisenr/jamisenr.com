@@ -1,0 +1,221 @@
+:root {
+  --bg: #10141a;
+  --fg: #e6e6e6;
+  --accent: #60a5fa;
+  --highlight: #8b5cf6;
+  --dim: #aaa;
+  --code-bg: #1c1f26;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  margin: 0;
+  padding: 2rem;
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  line-height: 1.75;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.4rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin-top: 2rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #fff;
+}
+
+nav {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0 0.75rem;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 1rem 0;
+  border: 1px solid #222;
+}
+
+code {
+  background-color: var(--code-bg);
+  color: #cbd5e1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-family: Menlo, Monaco, Consolas, monospace;
+}
+
+blockquote {
+  border-left: 3px solid var(--highlight);
+  padding-left: 1rem;
+  color: var(--dim);
+  font-style: italic;
+  margin: 1.5rem 0;
+  background: #131921;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+#session-qr {
+  display: none;
+  margin-top: 1rem;
+  text-align: left;
+  animation: fadeIn 0.5s ease-in;
+}
+
+#session-qr img {
+  max-width: 180px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #444;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+  margin-top: 0.5rem;
+}
+
+:target#session-qr {
+  display: block;
+}
+
+#session-qr a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--dim);
+  text-decoration: underline;
+}
+
+#session-qr a:hover {
+  color: #fff;
+}
+
+#tox-qr {
+  display: none;
+  margin-top: 1rem;
+  text-align: left;
+  animation: fadeIn 0.5s ease-in;
+}
+
+#tox-qr img {
+  max-width: 180px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #444;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+  margin-top: 0.5rem;
+}
+
+:target#tox-qr {
+  display: block;
+}
+
+#tox-qr a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--dim);
+  text-decoration: underline;
+}
+
+#tox-qr a:hover {
+  color: #fff;
+}
+
+.toggle-btn {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  background-color: #1c1f26;
+  color: var(--highlight);
+  border: 1px solid #444;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+#help-section {
+  display: none;
+}
+
+:target#help-section {
+  display: block;
+}
+
+#hide-help-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--dim);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#hide-help-link:hover {
+  color: #fff;
+}
+
+.contact-item {
+  margin-bottom: 2rem;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.codeblock {
+  background: #1e2630;
+  color: #cbd5e1;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border: 1px solid #2e3440;
+}

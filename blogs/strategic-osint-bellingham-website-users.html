@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Strategic OSINT: Who Has Access to Bellingham Schools Website</title>
+  <meta name="description" content="How I used public WordPress API endpoints to identify users with posting access to the Bellingham Public Schools website." />
+  <meta name="author" content="Jamisen Renoud" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../files/main.css" />
+</head>
+<body>
+  <nav>
+    <a href="../index.html">Home</a>
+  </nav>
+  <main class="container">
+    <h2>Strategic OSINT: Finding Out Who Has Access to the Bellingham Public Schools Website</h2>
+    <p><small>By Jamisen Renoud</small></p>
+    <p><small>May 11th, 2025</small></p>
+
+    <p>
+      While exploring the Bellingham Public Schools website, I discovered it runs on WordPress, which exposes some surprisingly useful API endpoints.
+      By querying <code>/wp-json/wp/v2/users</code>, I could pull a list of every registered author with access to publish content on the site — no login or credentials required.
+    </p>
+
+    <h3>The Endpoint</h3>
+    <p>
+      This URL revealed the full author list:
+      <br><a href="https://bellinghamschools.org/wp-json/wp/v2/users" target="_blank">https://bellinghamschools.org/wp-json/wp/v2/users</a>
+    </p>
+    <img src="../files/blog-content/strategic-osint-bellingham-website-users/1.png" alt="Image showing json output">
+
+    <h3>Users Discovered</h3> <p>(District Site)</p>
+    <ul>
+      <li><a href="https://bellinghamschools.org/author/avader/">Amelia Vader</a> - Grant Writer and Special Projects Manager</li>
+      <li><a href="https://bellinghamschools.org/author/aforhan/">Andrew Forhan</a> - Communications Technician Specialist</li>
+      <li><a href="https://bellinghamschools.org/author/wpalmer/">Bill Palmer</a> - Director, Teaching and Learning - Technology Integration</li>
+      <li><a href="https://bellinghamschools.org/author/caitlin/">Caitlin</a> - Unidentified</li>
+      <li><a href="https://bellinghamschools.org/author/cforhan/">Cara Forhan</a> - Executive Administrative Assistant, Human Resources </li>
+      <li><a href="https://bellinghamschools.org/author/clmartin/">Clover Martin</a> - Administrative Assistant, Health Services</li>
+      <li><a href="https://bellinghamschools.org/author/dasmith/">Dana Smith</a> - Assistant Director, Communications</li>
+      <li><a href="https://bellinghamschools.org/author/gserrano/">Gladys Serrano</a> - Administrative Assistant, Teaching and Learning</li>
+      <li><a href="https://bellinghamschools.org/author/gbaker/">Greg Baker</a> - Superintendent</li>
+      <li><a href="https://bellinghamschools.org/author/hsteele/">Heather Steele</a> - Director, Teaching and Learning - Career and Technical Education</li>
+    </ul>
+    <p>
+      Oddly, this is only some users, most likely ones with admin access, but thats a guess, as users <a href="https://bellinghamschools.org/author/jfarmer/">Janis Velasquez Farmer</a> (Director of DEI), as well as <a href="https://bellinghamschools.org/author/lisahust/">Lisa Hust</a> (not on district website, but I suspect was HR from some searching) found at <code>https://bellinghamschools.org/wp-json/wp/v2/users/3</code> do not appear in that list.
+    </p>
+
+    <h3>Users Discovered</h3> <p>(Sehome Site)</p>
+    <p>Now I went to look at <code>sehome.bellinghamschools.org</code> and found everything is basically the same, and found these users.</p>
+    <ul>
+      <li><a href="https://sehome.bellinghamschools.org/author/ahjelt/">Amy Hjelt</a> - Unknown</li>
+      <li><a href="https://sehome.bellinghamschools.org/author/aforhan/">Andrew Forhan</a> - Communications Technician Specialist</li>
+      <li><a href="https://sehome.bellinghamschools.org/author/lgilchrist/">Lisa Gilchrist</a> - Unknown</li>
+      <li><a href="https://sehome.bellinghamschools.org/author/lisahust/">Lisa Hust</a> - Unknown</li>
+      <li><a href="https://sehome.bellinghamschools.org/author/mgude/">Margaret Gude</a> - Communications Specialist</li>
+      <li><a href="https://sehome.bellinghamschools.org/author/mcontreras/">Monica Contreras</a> - Administrative Assistant to the Principal</li>
+      <li><a href="https://sehome.bellinghamschools.org/author/ncook-desler/">Nicky Cook-Desler</a> - Library Media Specialist</li>
+    </ul>
+
+    <h3>Why It Matters</h3>
+    <p>
+      Even though no private data was exposed, this tells us who has backend access, and could be targeted by phishing campaigns.
+    </p>
+
+    <blockquote>
+      <strong>Note:</strong> This is a completely public endpoint. No login or security was bypassed.
+    </blockquote>
+  </main>
+</body>
+</html>
