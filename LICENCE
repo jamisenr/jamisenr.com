@@ -1,8 +1,22 @@
-This project uses two licenses depending on the type of content:
+Copyright © 2025 Jamisen Renoud
 
-- All code (HTML, CSS, JS, etc.) is licensed under the MIT License:  
-  https://opensource.org/licenses/MIT
+This project is licensed under the
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License.
 
-- All creative content (text, writing, design, graphics) is licensed under  
-  the Creative Commons Attribution 4.0 International (CC BY 4.0) license:  
-  https://creativecommons.org/licenses/by/4.0/
+You are free to:
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+
+Under the following terms:
+- Attribution — You must give appropriate credit.
+- NonCommercial — You may not use the material for commercial purposes.
+
+This license applies to all content in this project, including:
+- Text and blog posts
+- Images and graphics
+- HTML, CSS, and frontend code
+- Site design and layout
+
+Unless otherwise stated, all files in this project are covered under this license.
+
+Full legal text and details: https://creativecommons.org/licenses/by-nc/4.0/
