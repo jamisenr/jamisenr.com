@@ -185,15 +185,17 @@ blockquote {
 
 #hide-help-link {
   display: inline-block;
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  color: var(--dim);
+  margin-top: 0.7rem;
+  font-size: 0.94rem;
+  color: var(--dim, #999);
   cursor: pointer;
   text-decoration: underline;
+  opacity: 0.8;
 }
 
 #hide-help-link:hover {
   color: #fff;
+  opacity: 1;
 }
 
 .contact-item {
