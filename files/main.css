@@ -130,38 +130,6 @@ blockquote {
   color: #fff;
 }
 
-#tox-qr {
-  display: none;
-  margin-top: 1rem;
-  text-align: left;
-  animation: fadeIn 0.5s ease-in;
-}
-
-#tox-qr img {
-  max-width: 180px;
-  height: auto;
-  border-radius: 6px;
-  border: 1px solid #444;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
-  margin-top: 0.5rem;
-}
-
-:target#tox-qr {
-  display: block;
-}
-
-#tox-qr a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: var(--dim);
-  text-decoration: underline;
-}
-
-#tox-qr a:hover {
-  color: #fff;
-}
-
 .toggle-btn {
   display: inline-block;
   padding: 0.4rem 0.8rem;
