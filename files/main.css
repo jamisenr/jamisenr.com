@@ -166,10 +166,6 @@ blockquote {
   opacity: 1;
 }
 
-.contact-item {
-  margin-bottom: 2rem;
-}
-
 .fade-in {
   opacity: 0;
   animation: fadeIn 1s forwards;
