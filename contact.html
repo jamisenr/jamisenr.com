@@ -8,55 +8,57 @@
 <head>
   <meta name="robots" content="noindex, noarchive, nofollow">
   <meta charset="UTF-8" />
+  <link rel="icon" href="/files/content/favicons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/files/content/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/files/content/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/files/content/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/files/content/favicons/site.webmanifest">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Jamisen R</title>
   <link rel="stylesheet" href="files/main.css" />
-  <meta name="description" content="Contact methods for Jamisen Renoud - email, Signal, Session, and PGP key.">
+  <meta name="description" content="Contact methods for Jamisen Renoud - email, Signal, XMPP, and PGP key.">
   <meta name="author" content="Jamisen Renoud">
-  <meta name="keywords" content="contact, Signal, Session, email, PGP, privacy, Jamisen Renoud">
+  <meta name="keywords" content="contact, Signal, XMPP, email, PGP, privacy, Jamisen Renoud">
 </head>
 <body>
   <main class="container">
     <nav><a href="index.html">Home</a></nav>
 
     <h1>Contact</h1>
-    <p>If you want to get in touch securely, I offer a few different options depending on your needs.</p>
+    <p>If you want to get in touch, I have a few options for you!</p>
 
-    <section class="contact-item">
-      <div>
-        <strong>Email:</strong> <a href="mailto:jamisenr@pm.me">jamisenr@pm.me</a>
-        <div class="pgp-link">
-          <small>
-            <a href="https://api.protonmail.ch/pks/lookup?op=get&search=jamisenr%40pm.me" target="_blank" rel="noopener noreferrer">[PGP key]</a> - (Fingerprint: d65b303ee8df9975f243735b6a220b13e73e1211)
-          </small>
-        </div>
-      </div>
+    <div class="contact-grid">
 
-      <div>
-        <strong>Signal (username) <small>(<a href="https://signal.org" target="_blank" rel="noopener noreferrer">Signal Website</a>)</small>:</strong> jamisenr.443
-      </div>
-      <div>
-        <a href="#signal-qr">[View Signal QR code]</a>
-        </div>
+      <section class="contact-card">
+        <h3>Email</h3>
+        <p><a href="mailto:jamisenr@tuta.io">jamisenr@tuta.io</a></p>
+        <p class="small">
+          <a href="/files/content/jamisenr_pubkey.asc" target="_blank" rel="noopener noreferrer">PGP Key</a>
+          • Fingerprint: <span class="mono">443786C3A731D307954E96FA0249D50CFD80E6AC</span>
+        </p>
+      </section>
 
-        <div id="signal-qr" class="qr-container">
-          <p><strong>Signal QR Code:</strong> <a href="#">[Hide]</a></p>
-          <img src="files/content/signal-qrcode.png" alt="Signal QR Code" />
-        </div>
+      <section class="contact-card">
+        <h3>Signal</h3>
+        <p><small>(username)</small></p>
+        <p class="mono">jamisenr.443</p>
+        <p><a href="https://signal.org" target="_blank" rel="noopener noreferrer">signal.org</a></p>
+      </section>
 
+      <section class="contact-card">
+        <h3>XMPP / Jabber</h3>
+        <p class="mono">jamisenr@jabber.fr</p>
+        <p><small>Please use OMEMO!</small></p>
+        <p><a href="https://xmpp.org/" target="_blank" rel="noopener noreferrer">xmpp.org</a></p>
+      </section>
 
-      <div>
-        <strong>Session ID <small>(<a href="https://getsession.org" target="_blank" rel="noopener noreferrer">Session Website</a>)</small>:</strong>
-        <span>0567e592186fcf584428230e8af96dc2c8f7f8848dc07c1f290c72422e2fee4b40</span>
-        <br />
-        <a href="#session-qr">[View Session QR code]</a>
-      </div>
+    </div>
 
-      <div id="session-qr" class="qr-container">
-        <p><strong>Session QR Code:</strong> <a href="#">[Hide]</a></p>
-        <img src="files/content/session-qrcode.png" alt="Session ID QR Code" />
-      </div>
-    </section>
+    <footer class="site-footer">
+      <p class="cc-license">
+        Content licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> • © 2025 Jamisen Renoud
+      </p>
+    </footer>
   </main>
 </body>
 </html>

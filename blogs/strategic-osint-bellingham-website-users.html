@@ -7,9 +7,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="/files/content/favicons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/files/content/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/files/content/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/files/content/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/files/content/favicons/site.webmanifest">
   <title>Strategic OSINT: Who Has Access to Bellingham Schools Website</title>
   <meta name="description" content="How I used public WordPress API endpoints to identify users with posting access to the Bellingham Public Schools website." />
   <meta name="keywords" content="OSINT, open source intelligence, digital investigation, email tracing, metadata, privacy, cybersecurity, online research, digital forensics, student OSINT, Jamisen Renoud">
+  <meta property="article:published_time" content="2025-05-11T00:00:00Z">
+  <meta name="date" content="2025-05-11">
   <meta name="author" content="Jamisen Renoud" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../files/main.css" />
@@ -27,8 +34,12 @@
       <strong>Note:</strong> This is a completely public endpoint. No login or security was bypassed.
     </blockquote>
 
+  <h2 class="callout important">
+    IMPORTANT: This is patched as of a new website update, they no longer use WordPress.
+  </h2>
+
+
     <p>
-      <h2>IMPORTANT: This is patched as of a new website update, they no longer use wordpress.</h2>
       While exploring the Bellingham Public Schools website, I discovered it runs on WordPress, which exposes some surprisingly useful API endpoints.
       By querying <code>/wp-json/wp/v2/users</code>, I could pull a list of registered authors with access to publish content on the site - no login or credentials required.
     </p>
